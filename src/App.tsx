@@ -1,15 +1,12 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomeView from "./views/HomeView";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>hi</div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
