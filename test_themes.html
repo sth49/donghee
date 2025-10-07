@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.1.23/dist/full.min.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5.1.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
     <div id="test"></div>
     <script>
-        const themes = ['light', 'dark', 'corporate', 'emerald', 'business'];
-        themes.forEach(theme => {
-            document.documentElement.setAttribute('data-theme', theme);
-            const styles = getComputedStyle(document.documentElement);
-            const primary = styles.getPropertyValue('--p');
-            document.getElementById('test').innerHTML += `<p>${theme}: --p = '${primary}'</p>`;
-        });
+      const themes = ["nord", "business"];
+      themes.forEach((theme) => {
+        document.documentElement.setAttribute("data-theme", theme);
+        const styles = getComputedStyle(document.documentElement);
+        const primary = styles.getPropertyValue("--p");
+        document.getElementById(
+          "test"
+        ).innerHTML += `<p>${theme}: --p = '${primary}'</p>`;
+      });
     </script>
-</body>
+  </body>
 </html>

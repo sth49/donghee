@@ -1,13 +1,23 @@
-import { FileText, Github, Link2, ChevronDown, ChevronUp, BookOpen, Star, Filter, Search } from 'lucide-react';
-import { useState } from 'react';
-import { publicationsData } from '../data/publicationsData';
+import {
+  FileText,
+  Github,
+  Link2,
+  ChevronDown,
+  ChevronUp,
+  BookOpen,
+  Star,
+  Filter,
+  Search,
+} from "lucide-react";
+import { useState } from "react";
+import { publicationsData } from "../data/publicationsData";
 
-type PublicationType = 'conference' | 'journal' | 'workshop' | 'preprint';
+type PublicationType = "conference" | "poster" | "workshop" | "preprint";
 
 export default function Publications() {
   const [expandedPapers, setExpandedPapers] = useState<Set<number>>(new Set());
-  const [filterType, setFilterType] = useState<'all' | PublicationType>('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [filterType, setFilterType] = useState<"all" | PublicationType>("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const toggleExpanded = (index: number) => {
     const newExpanded = new Set(expandedPapers);
@@ -19,29 +29,38 @@ export default function Publications() {
     setExpandedPapers(newExpanded);
   };
 
-  const filteredPublications = publicationsData.filter(pub => {
-    const matchesType = filterType === 'all' || pub.type === filterType;
-    const matchesSearch = searchQuery === '' || 
+  const filteredPublications = publicationsData.filter((pub) => {
+    const matchesType = filterType === "all" || pub.type === filterType;
+    const matchesSearch =
+      searchQuery === "" ||
       pub.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      pub.authors.some(author => author.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      pub.authors.some((author) =>
+        author.toLowerCase().includes(searchQuery.toLowerCase())
+      ) ||
       pub.venue.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesType && matchesSearch;
   });
 
-  const publicationTypes = ['all', 'conference', 'journal', 'workshop', 'preprint'] as const;
+  const publicationTypes = [
+    "all",
+    "conference",
+    "poster",
+    "workshop",
+    "preprint",
+  ] as const;
 
   const getTypeBadgeColor = (type: PublicationType) => {
     switch (type) {
-      case 'conference':
-        return 'badge-primary';
-      case 'journal':
-        return 'badge-success';
-      case 'workshop':
-        return 'badge-warning';
-      case 'preprint':
-        return 'badge-secondary';
+      case "conference":
+        return "badge-primary";
+      case "poster":
+        return "badge-success";
+      case "workshop":
+        return "badge-warning";
+      case "preprint":
+        return "badge-secondary";
       default:
-        return 'badge-ghost';
+        return "badge-ghost";
     }
   };
 
@@ -54,9 +73,11 @@ export default function Publications() {
             <BookOpen className="h-8 w-8 text-primary" />
             <h2 className="text-4xl font-bold">Publications</h2>
           </div>
-          <p className="text-base-content/60 text-lg">My research contributions and academic papers</p>
+          <p className="text-base-content/60 text-lg">
+            My research contributions and academic papers
+          </p>
         </div>
-        
+
         {/* Search and Filter */}
         <div className="mb-8 space-y-4">
           {/* Search Bar */}
@@ -80,16 +101,18 @@ export default function Publications() {
                   key={type}
                   onClick={() => setFilterType(type)}
                   className={`btn btn-sm ${
-                    filterType === type 
-                      ? 'btn-primary' 
-                      : 'btn-ghost'
+                    filterType === type ? "btn-primary" : "btn-ghost"
                   }`}
                 >
-                  {type === 'all' ? 'All' : type.charAt(0).toUpperCase() + type.slice(1)}
+                  {type === "all"
+                    ? "All"
+                    : type.charAt(0).toUpperCase() + type.slice(1)}
                   <span className="ml-1 text-xs opacity-70">
-                    ({type === 'all' 
-                      ? publicationsData.length 
-                      : publicationsData.filter(p => p.type === type).length})
+                    (
+                    {type === "all"
+                      ? publicationsData.length
+                      : publicationsData.filter((p) => p.type === type).length}
+                    )
                   </span>
                 </button>
               ))}
@@ -108,7 +131,11 @@ export default function Publications() {
                 <div className="card-body p-5">
                   {/* Title and Badges */}
                   <div className="flex flex-wrap items-start gap-2 mb-2">
-                    <span className={`badge badge-sm ${getTypeBadgeColor(pub.type as PublicationType)}`}>
+                    <span
+                      className={`badge badge-sm ${getTypeBadgeColor(
+                        pub.type as PublicationType
+                      )}`}
+                    >
                       {pub.type}
                     </span>
                     {pub.isFirstAuthor && (
@@ -117,9 +144,11 @@ export default function Publications() {
                         First Author
                       </span>
                     )}
-                    <span className="badge badge-sm badge-ghost">{pub.year}</span>
+                    <span className="badge badge-sm badge-ghost">
+                      {pub.year}
+                    </span>
                   </div>
-                  
+
                   <h3 className="text-lg font-semibold mb-2 text-base-content">
                     {pub.title}
                   </h3>
@@ -129,7 +158,9 @@ export default function Publications() {
                     {pub.authors.map((author, i) => (
                       <span key={i}>
                         {author === "Donghee Hong" ? (
-                          <span className="font-semibold text-base-content/90">{author}</span>
+                          <span className="font-semibold text-base-content/90">
+                            {author}
+                          </span>
                         ) : (
                           <span>{author}</span>
                         )}
@@ -140,15 +171,16 @@ export default function Publications() {
 
                   {/* Venue */}
                   <p className="text-sm text-base-content/60 mb-3">
-                    <span className="font-medium">{pub.venue}</span> • {pub.year}
+                    <span className="font-medium">{pub.venue}</span> •{" "}
+                    {pub.year}
                   </p>
 
                   {/* Action Buttons */}
                   <div className="flex flex-wrap items-center gap-2">
                     {pub.links?.pdf && (
-                      <a 
-                        href={pub.links.pdf} 
-                        target="_blank" 
+                      <a
+                        href={pub.links.pdf}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-xs btn-primary gap-1"
                       >
@@ -157,9 +189,9 @@ export default function Publications() {
                       </a>
                     )}
                     {pub.links?.arxiv && (
-                      <a 
-                        href={pub.links.arxiv} 
-                        target="_blank" 
+                      <a
+                        href={pub.links.arxiv}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-xs btn-ghost"
                       >
@@ -167,9 +199,9 @@ export default function Publications() {
                       </a>
                     )}
                     {pub.links?.github && (
-                      <a 
-                        href={pub.links.github} 
-                        target="_blank" 
+                      <a
+                        href={pub.links.github}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-xs btn-ghost gap-1"
                       >
@@ -178,9 +210,9 @@ export default function Publications() {
                       </a>
                     )}
                     {pub.links?.project && (
-                      <a 
-                        href={pub.links.project} 
-                        target="_blank" 
+                      <a
+                        href={pub.links.project}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-xs btn-ghost gap-1"
                       >
@@ -188,7 +220,7 @@ export default function Publications() {
                         Project
                       </a>
                     )}
-                    
+
                     {/* Abstract Toggle */}
                     {pub.abstract && (
                       <button
@@ -223,13 +255,15 @@ export default function Publications() {
             ))
           ) : (
             <div className="text-center py-12">
-              <p className="text-lg text-base-content/60">No publications found matching your criteria.</p>
+              <p className="text-lg text-base-content/60">
+                No publications found matching your criteria.
+              </p>
             </div>
           )}
         </div>
 
         {/* Stats Cards - Simplified */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
           <div className="stat bg-base-200/50 rounded-lg">
             <div className="stat-title text-xs">Total Publications</div>
             <div className="stat-value text-2xl">{publicationsData.length}</div>
@@ -248,7 +282,7 @@ export default function Publications() {
               {publicationsData.filter(p => p.type === 'conference').length}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,32 +1,33 @@
-import { User, Newspaper, BookOpen, Menu, X } from "lucide-react";
+import { User, BookOpen, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { profileData } from "../data/profileData";
 
 export default function Sidebar() {
   const [theme, setTheme] = useState(() => {
     // Check if theme is stored in localStorage
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem("theme");
     // Only use saved theme if it's one of our valid themes
-    if (savedTheme === 'nord' || savedTheme === 'business') {
+    if (savedTheme === "light" || savedTheme === "dark") {
       return savedTheme;
     }
     // Default theme
-    return "nord";
+    return "light";
   });
   const [activeSection, setActiveSection] = useState("about");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const isDarkMode = theme === "business";
+  const isDarkMode = theme === "dark";
 
   useEffect(() => {
-    console.log('Setting theme to:', theme);
+    console.log("Setting theme to:", theme);
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem('theme', theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "news", "publications"];
+      // const sections = ["about", "news", "publications"];
+      const sections = ["about", "publications"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -49,8 +50,8 @@ export default function Sidebar() {
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = isDarkMode ? "nord" : "business";
-    console.log('Toggling theme from', theme, 'to', newTheme);
+    const newTheme = isDarkMode ? "light" : "dark";
+    console.log("Toggling theme from", theme, "to", newTheme);
     setTheme(newTheme);
   };
 
@@ -64,7 +65,7 @@ export default function Sidebar() {
 
   const menuItems = [
     { id: "about", icon: User, label: "About" },
-    { id: "news", icon: Newspaper, label: "News" },
+    // { id: "news", icon: Newspaper, label: "News" },
     { id: "publications", icon: BookOpen, label: "Publications" },
   ];
 
@@ -88,9 +89,13 @@ export default function Sidebar() {
           <div>
             {/* Profile Section */}
             <div className="text-center mb-10">
-              <div className="avatar mb-6 hover:scale-105 transition-transform duration-300">
-                <div className="w-40 rounded-full ring-4 ring-primary/20 ring-offset-4 ring-offset-base-100">
-                  <img src={profileData.profileImage} alt="Profile" />
+              <div className="mb-6 hover:scale-105 transition-transform duration-300">
+                <div className="w-40 h-50 rounded-2xl overflow-hidden mx-auto">
+                  <img
+                    src={profileData.profileImage}
+                    alt="Profile"
+                    className="object-cover w-full h-full"
+                  />
                 </div>
               </div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -188,9 +193,13 @@ export default function Sidebar() {
             <div>
               {/* Profile Section */}
               <div className="text-center mb-10">
-                <div className="avatar mb-6">
-                  <div className="w-32 rounded-full ring-4 ring-primary/20 ring-offset-4 ring-offset-base-100">
-                    <img src={profileData.profileImage} alt="Profile" />
+                <div className="mb-6">
+                  <div className="w-32 h-40 rounded-2xl overflow-hidden mx-auto">
+                    <img
+                      src={profileData.profileImage}
+                      alt="Profile"
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">

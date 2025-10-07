@@ -3,7 +3,7 @@ export type Publication = {
   authors: string[];
   venue: string;
   year: number;
-  type: 'conference' | 'journal' | 'workshop' | 'preprint';
+  type: "conference" | "poster" | "workshop" | "preprint";
   links?: {
     pdf?: string;
     arxiv?: string;
@@ -17,80 +17,90 @@ export type Publication = {
 };
 
 export const publicationsData: Publication[] = [
+  // Under Review
   {
-    title: "Advanced Neural Architecture for Natural Language Understanding",
-    authors: ["Donghee Hong", "Minjae Kim", "Sunghoon Lee", "Prof. Kim"],
-    venue: "AAAI Conference on Artificial Intelligence",
-    year: 2025,
-    type: "conference",
-    isFirstAuthor: true,
-    links: {
-      pdf: "/papers/aaai2025.pdf",
-      arxiv: "https://arxiv.org/abs/2024.12345",
-      github: "https://github.com/yourusername/aaai2025"
-    },
-    abstract: "We propose a novel neural architecture that significantly improves natural language understanding tasks..."
-  },
-  {
-    title: "Efficient Transformer Optimization for Large-Scale Models",
-    authors: ["Donghee Hong", "Jiwoo Park", "Prof. Kim"],
-    venue: "International Conference on Machine Learning (ICML)",
-    year: 2024,
-    type: "conference",
-    isFirstAuthor: true,
-    links: {
-      pdf: "/papers/icml2024.pdf",
-      arxiv: "https://arxiv.org/abs/2024.11111",
-      github: "https://github.com/yourusername/efficient-transformer"
-    },
-    abstract: "This paper presents an efficient optimization technique for training large-scale transformer models..."
-  },
-  {
-    title: "Deep Learning Approaches for Korean NLP: A Comprehensive Survey",
-    authors: ["Minjae Kim", "Donghee Hong", "Prof. Lee"],
-    venue: "IEEE Access",
-    year: 2024,
-    type: "journal",
-    links: {
-      doi: "10.1109/ACCESS.2024.123456",
-      pdf: "/papers/ieee2024.pdf"
-    },
-    abstract: "We provide a comprehensive survey of deep learning methods applied to Korean natural language processing..."
-  },
-  {
-    title: "Multi-Modal Learning for Vision and Language Tasks",
-    authors: ["Donghee Hong", "Hyejin Choi", "Prof. Kim"],
-    venue: "Workshop on Multimodal Learning @ NeurIPS",
-    year: 2024,
-    type: "workshop",
-    isFirstAuthor: true,
-    links: {
-      pdf: "/papers/neurips2024w.pdf",
-      project: "https://multimodal-project.github.io"
-    },
-    abstract: "We introduce a multi-modal learning framework that jointly processes vision and language information..."
-  },
-  {
-    title: "Attention Mechanisms in Computer Vision: Recent Advances",
-    authors: ["Sunghoon Lee", "Donghee Hong", "Minjae Kim"],
-    venue: "Korea Software Congress (KSC)",
-    year: 2024,
-    type: "conference",
-    links: {
-      pdf: "/papers/ksc2024.pdf"
-    },
-    abstract: "This paper reviews recent advances in attention mechanisms for computer vision applications..."
-  },
-  {
-    title: "Scaling Laws for Korean Language Models",
-    authors: ["Donghee Hong", "Prof. Kim"],
-    venue: "arXiv preprint",
-    year: 2024,
+    title:
+      "HyPockeTuner: enabling mobile hyperparameter optimization through a novel event sequence visualization",
+    authors: ["Donghee Hong", "Bongshin Lee", "Jinwook Seo", "Jaemin Jo"],
+    venue: "CHI (under review)",
+    year: 2026,
     type: "preprint",
     isFirstAuthor: true,
-    links: {
-      arxiv: "https://arxiv.org/abs/2024.99999"
-    },
-    abstract: "We investigate the scaling properties of language models trained on Korean text corpora..."
-  }
+    abstract:
+      "We present HyPockeTuner, a mobile interactive HPO system featuring EventCrumb, a novel event sequence visualization tailored for smartphones that unified HPO progress, user interventions, and outcomes on a single timeline.",
+  },
+  {
+    title:
+      "Symetra: visual analytics for the parameter tuning process of symbolic execution engines",
+    authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],
+    venue: "IEEE PacificVis (under review)",
+    year: 2026,
+    type: "preprint",
+    isFirstAuthor: true,
+    abstract:
+      "We present Symetra, a visualization system for analyzing hyperparameters and their impact on symbolic execution engines, designed in collaboration with domain experts in software testing.",
+  },
+
+  // Published
+  {
+    title: "Symetra: visual analytics for tuning symbolic execution engines",
+    authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],
+    venue: "IEEE VIS (Poster)",
+    year: 2025,
+    type: "poster",
+    isFirstAuthor: true,
+    abstract:
+      "A visual analytics system for tuning symbolic execution engines through interactive parameter exploration.",
+  },
+  {
+    title:
+      "A system for generating image prompts using large language models for wheelchair spoke guard design",
+    authors: ["Sungwan Park", "Jihyeol Park", "Donghee Hong"],
+    venue: "Proceedings of the Korean Computer Science Society Conference",
+    year: 2024,
+    type: "conference",
+    abstract:
+      "An AI system that converts Korean design descriptions into appropriate image-generation prompts for young wheelchair users, addressing accessibility gaps for children with disabilities.",
+  },
+  {
+    title: "Deepfake detection for facial images with facemasks",
+    authors: [
+      "Donggeun Ko",
+      "Sangjun Lee",
+      "Jinyong Park",
+      "Saebyeol Shin",
+      "Donghee Hong",
+      "Simon S. Woo",
+    ],
+    venue:
+      "Proceedings of the 1st Workshop on Security Implications of Deepfakes and Cheapfakes",
+    year: 2022,
+    type: "workshop",
+    abstract:
+      "A deepfake detection model capable of identifying fake faces regardless of mask usage.",
+  },
+  {
+    title:
+      "VFP290k: a large-scale benchmark dataset for vision-based fallen person detection",
+    authors: [
+      "Jaeju An",
+      "Jeongho Kim",
+      "Hanbeen Lee",
+      "Jinbeom Kim",
+      "Junhyung Kang",
+      "Minha Kim",
+      "Saebyeol Shin",
+      "Donghee Hong",
+      "Simon S. Woo",
+    ],
+    venue:
+      "The Thirty-Fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2)",
+    year: 2021,
+    type: "conference",
+    // links: {
+    //   project: "https://neurips.cc/virtual/2021/poster/34573",
+    // },
+    abstract:
+      "A large-scale benchmark dataset containing 290k images for vision-based fallen person detection, contributing to real-world safety applications.",
+  },
 ];
