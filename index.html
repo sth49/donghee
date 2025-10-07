@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/donghee/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>donghee</title>
+    <script>
+      // Load theme from localStorage before rendering to prevent flash
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    </script>
+    <script type="module" crossorigin src="/donghee/assets/index-Jc3Ra-JF.js"></script>
+    <link rel="stylesheet" crossorigin href="/donghee/assets/index-DtGsVGKH.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
