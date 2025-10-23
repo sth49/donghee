@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="avatar">
           <div className="w-64 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=donghee" alt="Profile" />
+            <img src="/profile.jpg" alt="Profile" />
           </div>
         </div>
         <div>
