@@ -9,6 +9,7 @@ function App() {
   const [currentTheme, setCurrentTheme] = useState("");
 
   useEffect(() => {
+    console.log("currentTheme:", currentTheme);
     const checkTheme = () => {
       setCurrentTheme(
         document.documentElement.getAttribute("data-theme") || "none"
