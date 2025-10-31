@@ -10,7 +10,9 @@ function App() {
 
   useEffect(() => {
     const checkTheme = () => {
-      setCurrentTheme(document.documentElement.getAttribute("data-theme") || "none");
+      setCurrentTheme(
+        document.documentElement.getAttribute("data-theme") || "none"
+      );
     };
     checkTheme();
     const interval = setInterval(checkTheme, 500);
@@ -20,14 +22,14 @@ function App() {
   return (
     <div className="min-h-screen bg-base-100">
       {/* Debug Info */}
-      <div className="fixed bottom-4 right-4 z-50 bg-black/80 text-white p-3 text-xs rounded-lg">
+      {/* <div className="fixed bottom-4 right-4 z-50 bg-black/80 text-white p-3 text-xs rounded-lg">
         <div>Current theme: <strong>{currentTheme}</strong></div>
         <div className="flex gap-2 mt-2">
           <div className="w-12 h-6 bg-primary rounded" title="primary"></div>
           <div className="w-12 h-6 bg-secondary rounded" title="secondary"></div>
           <div className="w-12 h-6 bg-base-200 rounded border border-white" title="base-200"></div>
         </div>
-      </div>
+      </div> */}
 
       <Sidebar />
       <div className="lg:ml-80">

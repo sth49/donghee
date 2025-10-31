@@ -14,38 +14,79 @@ export const profileData = {
     {
       text: "I am a graduate student at ",
       highlights: [
-        { text: "Sungkyunkwan University", style: "base" },
+        {
+          text: "Sungkyunkwan University",
+          style: "base",
+          link: "https://www.skku.edu/eng/index.do",
+        },
         { text: ", working in the " },
-        { text: "Interactive Data Computing Laboratory (IDCLab)", style: "base", link: "https://idclab.skku.edu" },
+        {
+          text: "Interactive Data Computing Laboratory (IDCLab)",
+          style: "base",
+          link: "https://idclab.skku.edu",
+        },
         { text: " under the supervision of " },
-        { text: "Prof. Jaemin Jo", style: "base", link: "https://idclab.skku.edu/people.html" },
-        { text: ". My research focuses on developing " },
-        { text: "domain-specific visualization systems", style: "primary" },
+        {
+          text: "Prof. Jaemin Jo",
+          style: "base",
+          link: "https://idclab.skku.edu/people.html",
+        },
+        { text: ". My research focuses on " },
+        { text: "visual analytics", style: "primary" },
+        { text: " and " },
+        { text: "human-in-the-loop systems", style: "primary" },
         { text: " that support experts in " },
-        { text: "parameter-based decision making", style: "primary" },
-        { text: "." }
-      ]
+        { text: "parameter optimization", style: "primary" },
+        { text: " and " },
+        { text: "decision-making", style: "primary" },
+        { text: "." },
+      ],
     },
     {
-      text: "I collaborate with domain experts in ",
+      text: "I design and evaluate interactive visualization systems for domain experts in ",
       highlights: [
         { text: "machine learning", style: "secondary" },
         { text: ", " },
         { text: "software testing", style: "secondary" },
         { text: ", and " },
         { text: "healthcare", style: "secondary" },
-        { text: " to identify common patterns in their decision-making processes. My goal is to develop " },
-        { text: "generalizable design frameworks", style: "base" },
-        { text: " that help HCI researchers systematically create visualization tools for new expert domains." }
-      ]
-    }
+        { text: ". Recent projects include " },
+        { text: "HyPockeTuner", style: "base" },
+        {
+          text: ", a mobile hyperparameter optimization system with event sequence visualization, and ",
+        },
+        { text: "Symetra", style: "base" },
+        {
+          text: ", a visual analytics tool for tuning symbolic execution engines. I am currently working on visualization systems for ",
+        },
+        { text: "neural network interpretability", style: "base" },
+        { text: " and " },
+        { text: "pediatric clinical data analysis", style: "base" },
+        { text: "." },
+      ],
+    },
+    {
+      text: "My research approach combines ",
+      highlights: [
+        { text: "iterative design", style: "secondary" },
+        { text: " with empirical evaluation methods including " },
+        { text: "expert interviews", style: "secondary" },
+        { text: ", " },
+        { text: "case studies", style: "secondary" },
+        { text: ", and " },
+        { text: "controlled lab studies", style: "secondary" },
+        {
+          text: " to develop practical tools for complex analytical workflows.",
+        },
+      ],
+    },
   ],
   researchInterests: [
-    "Domain-Specific Visualization Systems",
-    "Parameter-Based Decision Making",
-    "Human-AI Interaction",
-    "Time-Series Data Visualization",
-    "Expert Collaboration & Design Frameworks",
+    "Visual Analytics",
+    "Parameter Optimization",
+    "Human-in-the-Loop Systems",
+    "User-Centered Design",
+    "Human-AI Collaboration",
   ],
   education: [
     {

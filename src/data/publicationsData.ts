@@ -20,7 +20,7 @@ export const publicationsData: Publication[] = [
   // Under Review
   {
     title:
-      "HyPockeTuner: enabling mobile hyperparameter optimization through a novel event sequence visualization",
+      "HyPockeTuner: Enabling Mobile Hyperparameter Optimization Through a Novel Event Sequence Visualization",
     authors: ["Donghee Hong", "Bongshin Lee", "Jinwook Seo", "Jaemin Jo"],
     venue: "CHI (under review)",
     year: 2026,
@@ -31,7 +31,7 @@ export const publicationsData: Publication[] = [
   },
   {
     title:
-      "Symetra: visual analytics for the parameter tuning process of symbolic execution engines",
+      "Symetra: Visual Analytics for the Parameter Tuning Process of Symbolic Execution Engines",
     authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],
     venue: "IEEE PacificVis (under review)",
     year: 2026,
@@ -43,7 +43,7 @@ export const publicationsData: Publication[] = [
 
   // Published
   {
-    title: "Symetra: visual analytics for tuning symbolic execution engines",
+    title: "Symetra: Visual Analytics for Tuning Symbolic Execution Engines",
     authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],
     venue: "IEEE VIS (Poster)",
     year: 2025,
@@ -54,7 +54,7 @@ export const publicationsData: Publication[] = [
   },
   {
     title:
-      "A system for generating image prompts using large language models for wheelchair spoke guard design",
+      "A System for Generating Image Prompts Using Large Language Models for Wheelchair Spoke Guard Design",
     authors: ["Sungwan Park", "Jihyeol Park", "Donghee Hong"],
     venue: "Proceedings of the Korean Computer Science Society Conference",
     year: 2024,
@@ -63,7 +63,7 @@ export const publicationsData: Publication[] = [
       "An AI system that converts Korean design descriptions into appropriate image-generation prompts for young wheelchair users, addressing accessibility gaps for children with disabilities.",
   },
   {
-    title: "Deepfake detection for facial images with facemasks",
+    title: "Deepfake Detection for Facial Images With Facemasks",
     authors: [
       "Donggeun Ko",
       "Sangjun Lee",
@@ -81,7 +81,7 @@ export const publicationsData: Publication[] = [
   },
   {
     title:
-      "VFP290k: a large-scale benchmark dataset for vision-based fallen person detection",
+      "VFP290k: A Large-Scale Benchmark Dataset for Vision-Based Fallen Person Detection",
     authors: [
       "Jaeju An",
       "Jeongho Kim",
