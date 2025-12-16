@@ -1,15 +1,9 @@
-import {
-  Mail,
-  FileText,
-  GraduationCap,
-  BookOpen,
-  Hand,
-} from "lucide-react";
+import { Mail, FileText, BookOpen, Hand } from "lucide-react";
 import { profileData } from "../data/profileData";
 
 export default function About() {
   return (
-    <section className="min-h-screen py-12 lg:py-20">
+    <section className="py-8 lg:py-12">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center ">
@@ -97,16 +91,20 @@ export default function About() {
 
             <div className="prose prose-lg max-w-none mb-8">
               {profileData.bio.map((paragraph, index) => (
-                <p key={index} className="text-base leading-relaxed text-base-content/80 mt-3 first:mt-0">
+                <p
+                  key={index}
+                  className="text-base leading-relaxed text-base-content/80 mt-3 first:mt-0"
+                >
                   {paragraph.text}
                   {paragraph.highlights.map((segment, segIndex) => {
-                    const className = segment.style === "base"
-                      ? "font-semibold text-base-content"
-                      : segment.style === "primary"
-                      ? "font-semibold text-primary"
-                      : segment.style === "secondary"
-                      ? "font-semibold text-secondary"
-                      : "";
+                    const className =
+                      segment.style === "base"
+                        ? "font-semibold text-base-content"
+                        : segment.style === "primary"
+                        ? "font-semibold text-primary"
+                        : segment.style === "secondary"
+                        ? "font-semibold text-secondary"
+                        : "";
 
                     if (segment.link) {
                       return (
@@ -156,54 +154,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Education Timeline */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <div className="w-1 h-6 bg-primary rounded-full"></div>
-              <GraduationCap className="h-6 w-6 text-primary" />
-              Education
-            </h3>
-            <div className="space-y-4">
-              {profileData.education.map((edu, index) => (
-                <div
-                  key={index}
-                  className="group relative pl-8 before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary before:to-secondary"
-                >
-                  <div className="absolute left-0 top-2 w-3 h-3 bg-primary rounded-full -translate-x-[5px] ring-4 ring-base-100"></div>
-
-                  <div className="card bg-base-200/30 hover:bg-base-200/50 transition-all duration-300 hover:shadow-xl border border-base-content/5">
-                    <div className="card-body p-6">
-                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                        <div className="flex-1">
-                          <h4 className="text-xl font-bold text-primary mb-1">
-                            {edu.degree}
-                          </h4>
-                          <p className="text-lg font-medium text-base-content/80">
-                            {edu.school}
-                          </p>
-                          {edu.description && (
-                            <p className="text-sm text-base-content/60 mt-2">
-                              {edu.description}
-                            </p>
-                          )}
-                        </div>
-                        <div className="flex flex-col items-start lg:items-end gap-2">
-                          <span className="badge badge-outline">
-                            {edu.duration}
-                          </span>
-                          {edu.gpa && (
-                            <span className="badge badge-success">
-                              GPA: {edu.gpa}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

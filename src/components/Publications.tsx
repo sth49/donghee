@@ -65,7 +65,7 @@ export default function Publications() {
   };
 
   return (
-    <section className="min-h-screen py-12 lg:py-20 bg-base-100">
+    <section className="py-8 lg:py-12 bg-base-100">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="mb-12">
@@ -154,20 +154,22 @@ export default function Publications() {
                   </h3>
 
                   {/* Authors */}
-                  <div className="text-sm text-base-content/70 mb-2">
-                    {pub.authors.map((author, i) => (
-                      <span key={i}>
-                        {author === "Donghee Hong" ? (
-                          <span className="font-semibold text-base-content/90">
-                            {author}
-                          </span>
-                        ) : (
-                          <span>{author}</span>
-                        )}
-                        {i < pub.authors.length - 1 && ", "}
-                      </span>
-                    ))}
-                  </div>
+                  {pub.authors.length > 0 && (
+                    <div className="text-sm text-base-content/70 mb-2">
+                      {pub.authors.map((author, i) => (
+                        <span key={i}>
+                          {author === "Donghee Hong" ? (
+                            <span className="font-semibold text-base-content/90">
+                              {author}
+                            </span>
+                          ) : (
+                            <span>{author}</span>
+                          )}
+                          {i < pub.authors.length - 1 && ", "}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Venue */}
                   <p className="text-sm text-base-content/60 mb-3">

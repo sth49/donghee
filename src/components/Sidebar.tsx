@@ -1,4 +1,4 @@
-import { User, BookOpen, Menu, X } from "lucide-react";
+import { User, BookOpen, Menu, X, Award, GraduationCap } from "lucide-react";
 import { useState, useEffect } from "react";
 import { profileData } from "../data/profileData";
 
@@ -26,26 +26,32 @@ export default function Sidebar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // const sections = ["about", "news", "publications"];
-      const sections = ["about", "publications"];
-      const scrollPosition = window.scrollY + 100;
+      const sections = ["about", "education", "publications", "awards"];
+
+      // Find the section closest to the top of the viewport
+      let currentSection = sections[0];
+      let minDistance = Infinity;
 
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section);
-            break;
+          const rect = element.getBoundingClientRect();
+          // Check if section top is above the middle of the viewport
+          if (rect.top <= 250 && rect.bottom > 0) {
+            const distance = Math.abs(rect.top);
+            if (distance < minDistance) {
+              minDistance = distance;
+              currentSection = section;
+            }
           }
         }
       }
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -66,7 +72,9 @@ export default function Sidebar() {
   const menuItems = [
     { id: "about", icon: User, label: "About" },
     // { id: "news", icon: Newspaper, label: "News" },
+    { id: "education", icon: GraduationCap, label: "Education" },
     { id: "publications", icon: BookOpen, label: "Publications" },
+    { id: "awards", icon: Award, label: "Awards" },
   ];
 
   return (

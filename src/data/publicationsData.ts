@@ -19,21 +19,19 @@ export type Publication = {
 export const publicationsData: Publication[] = [
   // Under Review
   {
-    title:
-      "HyPockeTuner: Enabling Mobile Hyperparameter Optimization Through a Novel Event Sequence Visualization",
-    authors: ["Donghee Hong", "Bongshin Lee", "Jinwook Seo", "Jaemin Jo"],
-    venue: "CHI (under review)",
+    title: "Details withheld for blind peer review",
+    authors: [],
+    venue: "CHI",
     year: 2026,
     type: "preprint",
     isFirstAuthor: true,
-    abstract:
-      "We present HyPockeTuner, a mobile interactive HPO system featuring EventCrumb, a novel event sequence visualization tailored for smartphones that unified HPO progress, user interventions, and outcomes on a single timeline.",
+    abstract: "",
   },
   {
     title:
       "Symetra: Visual Analytics for the Parameter Tuning Process of Symbolic Execution Engines",
     authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],
-    venue: "IEEE PacificVis (under review)",
+    venue: "EuroVis (under review)",
     year: 2026,
     type: "preprint",
     isFirstAuthor: true,
