@@ -1,6 +1,5 @@
 import Sidebar from "./components/Sidebar";
 import About from "./components/About";
-// import News from "./components/News";
 import Education from "./components/Education";
 import Publications from "./components/Publications";
 import Awards from "./components/Awards";
@@ -40,10 +39,6 @@ function App() {
           <section id="about" className="scroll-mt-8">
             <About />
           </section>
-          {/* <div className="divider px-12 my-0"></div>
-          <section id="news" className="scroll-mt-8">
-            <News />
-          </section> */}
           <div className="divider px-12 my-0"></div>
           <section id="education" className="scroll-mt-8">
             <Education />

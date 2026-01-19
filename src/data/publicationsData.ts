@@ -11,21 +11,19 @@ export type Publication = {
     project?: string;
     doi?: string;
   };
-  abstract?: string;
   bibtex?: string;
   isFirstAuthor?: boolean;
 };
 
 export const publicationsData: Publication[] = [
-  // Under Review
+  // To Appear
   {
-    title: "Details withheld for blind peer review",
-    authors: [],
-    venue: "CHI",
+    title: "HyPockeTuner: Bringing Hyperparameter Optimization to Mobile Devices",
+    authors: ["Donghee Hong", "Bongshin Lee", "Jinwook Seo", "Jaemin Jo"],
+    venue: "CHI (To Appear)",
     year: 2026,
-    type: "preprint",
+    type: "conference",
     isFirstAuthor: true,
-    abstract: "",
   },
   {
     title:
@@ -35,8 +33,6 @@ export const publicationsData: Publication[] = [
     year: 2026,
     type: "preprint",
     isFirstAuthor: true,
-    abstract:
-      "We present Symetra, a visualization system for analyzing hyperparameters and their impact on symbolic execution engines, designed in collaboration with domain experts in software testing.",
   },
 
   // Published
@@ -47,8 +43,6 @@ export const publicationsData: Publication[] = [
     year: 2025,
     type: "poster",
     isFirstAuthor: true,
-    abstract:
-      "A visual analytics system for tuning symbolic execution engines through interactive parameter exploration.",
   },
   {
     title:
@@ -57,8 +51,6 @@ export const publicationsData: Publication[] = [
     venue: "Proceedings of the Korean Computer Science Society Conference",
     year: 2024,
     type: "conference",
-    abstract:
-      "An AI system that converts Korean design descriptions into appropriate image-generation prompts for young wheelchair users, addressing accessibility gaps for children with disabilities.",
   },
   {
     title: "Deepfake Detection for Facial Images With Facemasks",
@@ -74,8 +66,6 @@ export const publicationsData: Publication[] = [
       "Proceedings of the 1st Workshop on Security Implications of Deepfakes and Cheapfakes",
     year: 2022,
     type: "workshop",
-    abstract:
-      "A deepfake detection model capable of identifying fake faces regardless of mask usage.",
   },
   {
     title:
@@ -98,7 +88,5 @@ export const publicationsData: Publication[] = [
     // links: {
     //   project: "https://neurips.cc/virtual/2021/poster/34573",
     // },
-    abstract:
-      "A large-scale benchmark dataset containing 290k images for vision-based fallen person detection, contributing to real-world safety applications.",
   },
 ];

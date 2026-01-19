@@ -1,46 +1,59 @@
+export type NewsType =
+  | "award"
+  | "paper"
+  | "presentation"
+  | "scholarship"
+  | "position"
+  | "graduation"
+  | "conference";
+
 export type NewsItem = {
   date: string;
-  title: string;
-  description?: string;
+  content: string;
+  type: NewsType;
   link?: string;
-  type: 'publication' | 'award' | 'talk' | 'general' | 'position';
 };
 
 export const newsData: NewsItem[] = [
   {
-    date: "2024.12",
-    title: "Paper accepted at AAAI 2025",
-    description: "Our paper 'Advanced Neural Architecture for NLP' has been accepted",
-    type: "publication"
+    date: "2026.01",
+    content: "One paper accepted to **CHI 2026**. See you in Barcelona!",
+    type: "paper",
   },
   {
-    date: "2024.11",
-    title: "Best Paper Award at KSC 2024",
-    description: "Received best paper award at Korea Software Congress",
-    type: "award"
+    date: "2025.12",
+    content:
+      "Received **Honorable Mention** at SKKU Graduate Student Paper Award",
+    type: "award",
   },
   {
-    date: "2024.10",
-    title: "Invited Talk at AI Workshop",
-    description: "Presented research on deep learning applications at Seoul AI Workshop",
-    type: "talk"
+    date: "2025.11",
+    content: "Presented a poster at **IEEE VIS 2025** in Vienna, Austria",
+    type: "presentation",
+  },
+  {
+    date: "2025.08",
+    content: "One poster accepted to **IEEE VIS 2025**",
+    type: "paper",
   },
   {
     date: "2024.09",
-    title: "Started Graduate Studies",
-    description: "Joined Prof. Kim's lab as a graduate student",
-    type: "position"
+    content: "Selected as **SBS Cultural Foundation** Graduate Scholar",
+    type: "scholarship",
   },
   {
     date: "2024.06",
-    title: "Paper accepted at ICML 2024",
-    description: "Our work on transformer optimization has been accepted",
-    type: "publication"
+    content: "Presented at **Korea Computer Congress (KCC) 2024**",
+    type: "presentation",
   },
   {
     date: "2024.03",
-    title: "Graduated with Honors",
-    description: "Completed B.S. in Computer Science, Summa Cum Laude",
-    type: "general"
-  }
+    content: "Started **M.S. in Artificial Intelligence** at SKKU",
+    type: "position",
+  },
+  {
+    date: "2024.02",
+    content: "Graduated with B.S. in Computer Science, **Summa Cum Laude**",
+    type: "graduation",
+  },
 ];

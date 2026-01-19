@@ -1,5 +1,5 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: "Pretendard", "Inter", -apple-system, BlinkMacSystemFont,
+  font-family: "IBM Plex Sans", "Pretendard", -apple-system, BlinkMacSystemFont,
     system-ui, Roboto, sans-serif;
 }
 
@@ -86,8 +86,8 @@ html {
   --color-base-200: oklch(22.648% 0 0) !important;
   --color-base-300: oklch(20.944% 0 0) !important;
   --color-base-content: oklch(84.87% 0 0) !important;
-  --color-primary: oklch(41.703% 0.099 251.473) !important;
-  --color-primary-content: oklch(88.34% 0.019 251.473) !important;
+  --color-primary: oklch(65% 0.12 251.473) !important;
+  --color-primary-content: oklch(20% 0.02 251.473) !important;
   --color-secondary: oklch(64.092% 0.027 229.389) !important;
   --color-secondary-content: oklch(12.818% 0.005 229.389) !important;
   --color-accent: oklch(67.271% 0.167 35.791) !important;

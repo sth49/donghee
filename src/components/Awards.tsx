@@ -1,57 +1,73 @@
-import { Medal, Award } from "lucide-react";
+import { Medal, Award, Trophy } from "lucide-react";
 import { profileData } from "../data/profileData";
 
 export default function Awards() {
+  // Separate scholarships and awards
+  const scholarships = profileData.awards.filter((a) => a.type === "scholarship");
+  const awards = profileData.awards.filter((a) => a.type === "award");
+
   return (
     <section className="py-8 lg:py-12 bg-base-100">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Award className="h-8 w-8 text-primary" />
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <Trophy className="h-8 w-8 text-primary" />
             <h2 className="text-4xl font-bold">Awards & Honors</h2>
           </div>
-          <p className="text-base-content/60 text-lg">
-            Scholarships and recognition for academic excellence
-          </p>
         </div>
 
-        {/* Awards List */}
-        <div className="space-y-3">
-          {profileData.awards.map((award, index) => (
-            <div
-              key={index}
-              className="flex gap-4 p-4 bg-base-200/30 hover:bg-base-200/50 rounded-lg border border-base-content/5 transition-all duration-200"
-            >
-              <div className="flex items-center">
-                {award.type === "scholarship" ? (
-                  <Medal className="h-5 w-5 text-yellow-500 flex-shrink-0" />
-                ) : (
-                  <Award className="h-5 w-5 text-primary flex-shrink-0" />
-                )}
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <span className="font-semibold text-base-content">
-                      {award.title}
+        {/* Scholarships */}
+        {scholarships.length > 0 && (
+          <div className="mb-8">
+            <h3 className="text-lg font-bold text-primary mb-4 border-b border-base-content/10 pb-2 flex items-center gap-2">
+              <Medal className="h-5 w-5" />
+              Scholarships
+            </h3>
+            <ul className="space-y-4">
+              {scholarships.map((award, index) => (
+                <li key={index}>
+                  <p className="font-semibold text-base-content">
+                    {award.title}
+                    <span className="font-normal text-base-content/60 ml-2">
+                      {award.organization}
                     </span>
-                    <span className="text-base-content/50 mx-2">·</span>
-                    <span className="text-base-content/70">{award.organization}</span>
-                  </div>
-                  <span className="badge badge-outline badge-sm whitespace-nowrap flex-shrink-0">
-                    {award.duration}
-                  </span>
-                </div>
-                {award.description && (
-                  <p className="text-sm text-base-content/50 mt-1">
-                    {award.description}
                   </p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+                  <p className="text-sm text-base-content/50 mt-0.5">
+                    <span className="text-primary font-medium">{award.duration}</span>
+                    {award.description && <span> · {award.description}</span>}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Awards */}
+        {awards.length > 0 && (
+          <div>
+            <h3 className="text-lg font-bold text-primary mb-4 border-b border-base-content/10 pb-2 flex items-center gap-2">
+              <Award className="h-5 w-5" />
+              Awards
+            </h3>
+            <ul className="space-y-4">
+              {awards.map((award, index) => (
+                <li key={index}>
+                  <p className="font-semibold text-base-content">
+                    {award.title}
+                    <span className="font-normal text-base-content/60 ml-2">
+                      {award.organization}
+                    </span>
+                  </p>
+                  <p className="text-sm text-base-content/50 mt-0.5">
+                    <span className="text-primary font-medium">{award.duration}</span>
+                    {award.description && <span> · {award.description}</span>}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );

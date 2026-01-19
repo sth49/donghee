@@ -1,7 +1,42 @@
-import { Mail, FileText, BookOpen, Hand } from "lucide-react";
+import { Mail, FileText, BookOpen, Hand, Award, Medal, Briefcase, GraduationCap, Sparkles, ChevronDown, ChevronUp, Presentation } from "lucide-react";
 import { profileData } from "../data/profileData";
+import { newsData, type NewsType } from "../data/newsData";
+import { useState } from "react";
 
 export default function About() {
+  const [showAllNews, setShowAllNews] = useState(false);
+  const displayedNews = showAllNews ? newsData : newsData.slice(0, 3);
+
+  const getNewsIcon = (type: NewsType) => {
+    const baseClass = "h-4 w-4 text-primary";
+    switch (type) {
+      case 'award':
+        return <Award className={baseClass} />;
+      case 'paper':
+        return <BookOpen className={baseClass} />;
+      case 'presentation':
+        return <Presentation className={baseClass} />;
+      case 'scholarship':
+        return <Medal className={baseClass} />;
+      case 'position':
+        return <Briefcase className={baseClass} />;
+      case 'graduation':
+        return <GraduationCap className={baseClass} />;
+      default:
+        return null;
+    }
+  };
+
+  const renderNewsContent = (content: string) => {
+    const parts = content.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, i) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={i} className="font-semibold text-base-content">{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+  };
+
   return (
     <section className="py-8 lg:py-12">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
@@ -103,7 +138,7 @@ export default function About() {
                         : segment.style === "primary"
                         ? "font-semibold text-primary"
                         : segment.style === "secondary"
-                        ? "font-semibold text-secondary"
+                        ? "font-semibold text-primary"
                         : "";
 
                     if (segment.link) {
@@ -137,21 +172,88 @@ export default function About() {
         {/* Contact and Additional Info */}
         <div>
           {/* Research Interests */}
-          <div className="mb-12 mt-12">
+          <div className="mb-12 mt-6">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
               <div className="w-1 h-6 bg-primary rounded-full"></div>
               Research Interests
             </h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {profileData.researchInterests.map((interest, index) => (
                 <div
                   key={index}
-                  className="group relative px-6 py-3 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                  className="group relative px-3 py-1.5 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-md hover:shadow-primary/10"
                 >
-                  <span className="relative z-10 font-medium">{interest}</span>
+                  <span className="relative z-10 text-sm font-medium">{interest}</span>
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* News */}
+          <div className="mb-12">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <div className="w-1 h-6 bg-primary rounded-full"></div>
+              News
+            </h3>
+            <ul className="space-y-3">
+              {displayedNews.map((item, index) => {
+                const currentYear = item.date.substring(0, 4);
+                const prevYear = index > 0 ? displayedNews[index - 1].date.substring(0, 4) : currentYear;
+                const showDivider = index > 0 && currentYear !== prevYear;
+
+                return (
+                  <li key={index}>
+                    {showDivider && (
+                      <div className="border-b border-base-content/10 mb-3"></div>
+                    )}
+                    <div className="flex items-baseline gap-3">
+                      <span className="text-primary font-semibold text-sm min-w-[4.5rem]">
+                        {item.date}
+                      </span>
+                      <span className="relative top-[3px]">
+                        {getNewsIcon(item.type)}
+                      </span>
+                      <span className="text-base-content/80 leading-relaxed">
+                        {item.link ? (
+                          <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-primary/30 hover:decoration-primary hover:text-primary transition-colors"
+                          >
+                            {renderNewsContent(item.content)}
+                          </a>
+                        ) : (
+                          renderNewsContent(item.content)
+                        )}
+                        {index === 0 && (
+                          <span className="ml-2 inline-flex items-center gap-1 text-xs text-amber-500 font-semibold">
+                            <Sparkles className="h-3 w-3" />
+                            NEW
+                          </span>
+                        )}
+                      </span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            {newsData.length > 3 && (
+              <button
+                onClick={() => setShowAllNews(!showAllNews)}
+                className="mt-4 btn btn-sm btn-outline btn-primary gap-1"
+              >
+                {showAllNews ? (
+                  <>
+                    Show less <ChevronUp className="h-4 w-4" />
+                  </>
+                ) : (
+                  <>
+                    Show more <ChevronDown className="h-4 w-4" />
+                  </>
+                )}
+              </button>
+            )}
           </div>
 
         </div>

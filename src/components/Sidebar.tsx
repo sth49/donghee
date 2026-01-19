@@ -71,7 +71,6 @@ export default function Sidebar() {
 
   const menuItems = [
     { id: "about", icon: User, label: "About" },
-    // { id: "news", icon: Newspaper, label: "News" },
     { id: "education", icon: GraduationCap, label: "Education" },
     { id: "publications", icon: BookOpen, label: "Publications" },
     { id: "awards", icon: Award, label: "Awards" },
