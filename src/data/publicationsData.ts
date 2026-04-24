@@ -18,24 +18,33 @@ export type Publication = {
 export const publicationsData: Publication[] = [
   // To Appear
   {
-    title: "HyPockeTuner: Bringing Hyperparameter Optimization to Mobile Devices",
-    authors: ["Donghee Hong", "Bongshin Lee", "Jinwook Seo", "Jaemin Jo"],
-    venue: "CHI (To Appear)",
-    year: 2026,
-    type: "conference",
-    isFirstAuthor: true,
-  },
-  {
     title:
       "Symetra: Visual Analytics for the Parameter Tuning Process of Symbolic Execution Engines",
     authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],
-    venue: "EuroVis (under review)",
+    venue: "EuroVis (To Appear)",
     year: 2026,
-    type: "preprint",
+    type: "conference",
     isFirstAuthor: true,
+    links: {
+      pdf: "/Symetra.pdf",
+      github: "https://github.com/sth49/Symetra",
+    },
   },
 
   // Published
+  {
+    title:
+      "HyPockeTuner: Bringing Hyperparameter Optimization to Mobile Devices",
+    authors: ["Donghee Hong", "Bongshin Lee", "Jinwook Seo", "Jaemin Jo"],
+    venue: "ACM CHI Conference on Human Factors in Computing Systems (CHI)",
+    year: 2026,
+    type: "conference",
+    isFirstAuthor: true,
+    links: {
+      pdf: "/HyPockeTuner.pdf",
+      github: "https://github.com/sth49/HyPockeTuner",
+    },
+  },
   {
     title: "Symetra: Visual Analytics for Tuning Symbolic Execution Engines",
     authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],

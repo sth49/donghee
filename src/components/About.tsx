@@ -16,6 +16,8 @@ export default function About() {
         return <BookOpen className={baseClass} />;
       case 'presentation':
         return <Presentation className={baseClass} />;
+      case 'conference':
+        return <Presentation className={baseClass} />;
       case 'scholarship':
         return <Medal className={baseClass} />;
       case 'position':
@@ -241,7 +243,7 @@ export default function About() {
             {newsData.length > 3 && (
               <button
                 onClick={() => setShowAllNews(!showAllNews)}
-                className="mt-4 btn btn-sm btn-outline btn-primary gap-1"
+                className="mt-4 btn btn-sm btn-primary gap-1"
               >
                 {showAllNews ? (
                   <>

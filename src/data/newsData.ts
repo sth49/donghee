@@ -16,6 +16,34 @@ export type NewsItem = {
 
 export const newsData: NewsItem[] = [
   {
+    date: "2026.04",
+    content:
+      "Presented **HyPockeTuner** at **CHI 2026** in Barcelona, Spain",
+    type: "presentation",
+  },
+  {
+    date: "2026.03",
+    content: "One paper accepted to **EuroVis 2026**. See you in Nottingham!",
+    type: "paper",
+  },
+  {
+    date: "2026.03",
+    content: "Attended **UMD CS Visit Day** at the University of Maryland",
+    type: "conference",
+  },
+
+  {
+    date: "2026.02",
+    content:
+      "Admitted to the **Ph.D. program in Computer Science** at the University of Maryland (UMD)",
+    type: "position",
+  },
+  {
+    date: "2026.02",
+    content: "Graduated with **M.S. in Artificial Intelligence** from SKKU",
+    type: "graduation",
+  },
+  {
     date: "2026.01",
     content: "One paper accepted to **CHI 2026**. See you in Barcelona!",
     type: "paper",

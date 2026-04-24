@@ -1,9 +1,9 @@
 export const profileData = {
   name: "Donghee Hong",
   nameEn: "Donghee Hong",
-  title: "M.S. Student in Artificial Intelligence",
-  affiliation: "Interactive Data Computing Laboratory (IDCLab)",
-  university: "Sungkyunkwan University",
+  title: "Incoming Ph.D. in Computer Science",
+  affiliation: "Department of Computer Science",
+  university: "University of Maryland (UMD)",
   email: "dh.hong@skku.edu",
   github: "https://github.com/sth49",
   linkedin: "https://linkedin.com/in/donghee-hong-0ab5a823a",
@@ -12,18 +12,26 @@ export const profileData = {
   profileImage: "/profile.jpg",
   bio: [
     {
-      text: "I am a graduate student at ",
+      text: "I am an ",
       highlights: [
+        { text: "incoming Ph.D. student in Computer Science", style: "primary" },
+        { text: " at the " },
         {
-          text: "Sungkyunkwan University",
+          text: "University of Maryland (UMD)",
           style: "base",
-          link: "https://www.skku.edu/eng/index.do",
+          link: "https://www.cs.umd.edu/",
         },
-        { text: ", working in the " },
+        { text: ". Previously, I worked at the " },
         {
           text: "Interactive Data Computing Laboratory (IDCLab)",
           style: "base",
           link: "https://idclab.skku.edu",
+        },
+        { text: " at " },
+        {
+          text: "Sungkyunkwan University",
+          style: "base",
+          link: "https://www.skku.edu/eng/index.do",
         },
         { text: " under the supervision of " },
         {
@@ -36,23 +44,6 @@ export const profileData = {
         { text: " for " },
         { text: "domain experts", style: "primary" },
         { text: " who understand their data but lack tools to visually explore it." },
-      ],
-    },
-    {
-      text: "Through three projects in ",
-      highlights: [
-        { text: "machine learning", style: "secondary" },
-        { text: ", " },
-        { text: "software testing", style: "secondary" },
-        { text: ", and " },
-        { text: "pediatric medicine", style: "secondary" },
-        { text: ", I found that effective visualization must adapt to how experts already think. " },
-        { text: "HyPockeTuner", style: "base" },
-        { text: " brings hyperparameter optimization to mobile devices, " },
-        { text: "Symetra", style: "base" },
-        { text: " helps software testing researchers tune symbolic execution engines, and " },
-        { text: "PediaViz", style: "base" },
-        { text: " enables pediatricians to explore longitudinal patient records." },
       ],
     },
     {
@@ -80,11 +71,18 @@ export const profileData = {
   ],
   education: [
     {
+      degree: "Ph.D. in Computer Science",
+      school: "University of Maryland (UMD)",
+      duration: "Starting Aug 2026",
+      gpa: "",
+      description: "Adviser: Prof. Leo Zhicheng Liu",
+    },
+    {
       degree: "M.S. in Artificial Intelligence",
       school: "Sungkyunkwan University (SKKU)",
-      duration: "Mar 2024 - Present",
+      duration: "Mar 2024 - Feb 2026",
       gpa: "4.5 / 4.5",
-      description: "Expected February 2026 · Adviser: Prof. Jaemin Jo",
+      description: "Adviser: Prof. Jaemin Jo",
     },
     {
       degree: "B.S. in Computer Science and Engineering",

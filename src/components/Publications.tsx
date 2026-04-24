@@ -108,7 +108,7 @@ export default function Publications() {
                             href={pub.links.pdf}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-primary hover:underline"
+                            className="btn btn-xs btn-outline btn-primary gap-1 normal-case font-normal"
                           >
                             <FileText className="h-3.5 w-3.5" />
                             PDF
@@ -119,7 +119,7 @@ export default function Publications() {
                             href={pub.links.arxiv}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-primary hover:underline"
+                            className="btn btn-xs btn-outline btn-primary gap-1 normal-case font-normal"
                           >
                             <ExternalLink className="h-3.5 w-3.5" />
                             arXiv
@@ -130,7 +130,7 @@ export default function Publications() {
                             href={pub.links.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-primary hover:underline"
+                            className="btn btn-xs btn-outline btn-primary gap-1 normal-case font-normal"
                           >
                             <svg
                               className="h-3.5 w-3.5"
@@ -147,7 +147,7 @@ export default function Publications() {
                             href={pub.links.project}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-primary hover:underline"
+                            className="btn btn-xs btn-outline btn-primary gap-1 normal-case font-normal"
                           >
                             <Link2 className="h-3.5 w-3.5" />
                             Project
@@ -158,7 +158,7 @@ export default function Publications() {
                             href={pub.links.doi}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-primary hover:underline"
+                            className="btn btn-xs btn-outline btn-primary gap-1 normal-case font-normal"
                           >
                             <ExternalLink className="h-3.5 w-3.5" />
                             DOI
@@ -177,7 +177,7 @@ export default function Publications() {
         {olderYears.length > 0 && (
           <button
             onClick={() => setShowAll(!showAll)}
-            className="mt-6 btn btn-sm btn-outline btn-primary gap-1"
+            className="mt-6 btn btn-sm btn-primary gap-1"
           >
             {showAll ? (
               <>
