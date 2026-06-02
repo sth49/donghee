@@ -94,10 +94,24 @@ export const profileData = {
   ],
   awards: [
     {
+      title: "Dean's Fellowship",
+      organization: "University of Maryland (UMD)",
+      duration: "Sep 2026 - Aug 2028",
+      description: "Fellowship of $2,500 for two years",
+      type: "scholarship",
+    },
+    {
       title: "Graduate Scholarship",
       organization: "SBS Cultural Foundation",
       duration: "Sep 2024 - Feb 2026",
       description: "Full tuition and annual stipend · ~15 students selected nationwide (4%)",
+      type: "scholarship",
+    },
+    {
+      title: "Graduate Scholarship",
+      organization: "Daesang Foundation",
+      duration: "Mar 2024 - Jun 2024",
+      description: "Stipend of $4,800 per semester",
       type: "scholarship",
     },
     {
@@ -133,5 +147,47 @@ export const profileData = {
       duration: "Spring & Fall 2020, Fall 2021",
       type: "award",
     },
+    {
+      title: "SKKU Software Scholarship",
+      organization: "SKKU",
+      duration: "Mar 2020 - Dec 2022",
+      description: "Full tuition for two years (GPA above 3.5)",
+      type: "scholarship",
+    },
   ],
+  researchExperience: [
+    {
+      lab: "Interactive Data Computing Laboratory (IDCLab)",
+      school: "SKKU",
+      role: "Research Assistant",
+      adviser: "Prof. Jaemin Jo",
+      duration: "Aug 2022 - Present",
+      projects: [
+        { name: "HyPockeTuner", venue: "CHI 2026", pubId: "hypocketuner" },
+        { name: "Symetra", venue: "EuroVis 2026", pubId: "symetra-eurovis" },
+        { name: "SAE Feature Visualization" },
+        { name: "PediaViz" },
+      ],
+    },
+    {
+      lab: "Data-driven AI Security HCI (DASH) Laboratory",
+      school: "SKKU",
+      role: "Research Assistant",
+      adviser: "Prof. Simon Sung-il Woo",
+      duration: "Dec 2020 - Jun 2022",
+      projects: [
+        { name: "VFP290k", venue: "NeurIPS 2021", pubId: "vfp290k" },
+        { name: "Deepfake Detection", pubId: "deepfake-facemasks" },
+      ],
+    },
+  ],
+  teaching: {
+    assistant: [
+      { course: "Introduction to Human-Computer Interaction", terms: "Fall 2024, Fall 2025", school: "SKKU" },
+      { course: "Information Visualization", terms: "Spring 2025", school: "SKKU" },
+      { course: "Problem Solving", terms: "Fall 2025", school: "SKKU" },
+      { course: "Computer Programming for Engineers", terms: "Spring 2023, Spring 2025", school: "SKKU" },
+      { course: "Python Programming Orientation for Freshmen", terms: "2021 - 2023", school: "SKKU" },
+    ],
+  },
 };

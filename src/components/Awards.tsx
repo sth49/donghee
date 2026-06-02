@@ -1,10 +1,17 @@
-import { Medal, Award, Trophy } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, ChevronUp, Medal, Award, Trophy } from "lucide-react";
 import { profileData } from "../data/profileData";
 
 export default function Awards() {
+  const [showAllScholarships, setShowAllScholarships] = useState(false);
+  const [showAllAwards, setShowAllAwards] = useState(false);
   // Separate scholarships and awards
-  const scholarships = profileData.awards.filter((a) => a.type === "scholarship");
-  const awards = profileData.awards.filter((a) => a.type === "award");
+  const allScholarships = profileData.awards.filter((a) => a.type === "scholarship");
+  const allAwards = profileData.awards.filter((a) => a.type === "award");
+  const scholarships = showAllScholarships
+    ? allScholarships
+    : allScholarships.slice(0, 3);
+  const awards = showAllAwards ? allAwards : allAwards.slice(0, 3);
 
   return (
     <section className="py-8 lg:py-12 bg-base-100">
@@ -40,6 +47,22 @@ export default function Awards() {
                 </li>
               ))}
             </ul>
+            {allScholarships.length > 3 && (
+              <button
+                onClick={() => setShowAllScholarships(!showAllScholarships)}
+                className="mt-5 btn btn-sm btn-primary gap-1"
+              >
+                {showAllScholarships ? (
+                  <>
+                    Show less <ChevronUp className="h-4 w-4" />
+                  </>
+                ) : (
+                  <>
+                    Show more <ChevronDown className="h-4 w-4" />
+                  </>
+                )}
+              </button>
+            )}
           </div>
         )}
 
@@ -66,6 +89,22 @@ export default function Awards() {
                 </li>
               ))}
             </ul>
+            {allAwards.length > 3 && (
+              <button
+                onClick={() => setShowAllAwards(!showAllAwards)}
+                className="mt-5 btn btn-sm btn-primary gap-1"
+              >
+                {showAllAwards ? (
+                  <>
+                    Show less <ChevronUp className="h-4 w-4" />
+                  </>
+                ) : (
+                  <>
+                    Show more <ChevronDown className="h-4 w-4" />
+                  </>
+                )}
+              </button>
+            )}
           </div>
         )}
       </div>

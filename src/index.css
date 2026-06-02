@@ -44,6 +44,167 @@ html {
   transform-origin: 70% 70%;
 }
 
+/* Publication teaser: object-cover crops to the frame ratio (tall images
+   lose top/bottom, wide images lose the sides). Show the left side by
+   default and pan to the right side once on hover via object-position. */
+@keyframes teaser-sway {
+  from {
+    object-position: left center;
+  }
+  to {
+    object-position: right center;
+  }
+}
+.teaser-img {
+  object-position: left center;
+  transition: object-position 0.6s ease;
+}
+.group:hover .teaser-img {
+  animation: teaser-sway 1.8s ease-in-out forwards;
+}
+
+/* World map: trace a country's outline like a lasso, then pop a bubble. */
+@keyframes map-trace {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.map-trace {
+  stroke-dasharray: 100;
+  animation: map-trace 0.8s ease-out forwards;
+}
+@keyframes bubble-pop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 6px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+.bubble-pop {
+  transform-origin: bottom center;
+  animation: bubble-pop 0.3s 0.55s ease-out both;
+}
+
+.cartoon-map-shell {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.2)),
+    linear-gradient(180deg, rgba(223, 247, 255, 0.72) 0%, rgba(183, 232, 246, 0.62) 100%);
+  backdrop-filter: blur(16px) saturate(1.12);
+  -webkit-backdrop-filter: blur(16px) saturate(1.12);
+}
+
+.cartoon-map-stage {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.cartoon-map-region-switch {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.26));
+  backdrop-filter: blur(14px) saturate(1.18);
+  -webkit-backdrop-filter: blur(14px) saturate(1.18);
+  box-shadow:
+    0 6px 18px rgba(15, 23, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.cartoon-map-region-idle {
+  color: rgba(51, 65, 85, 0.78);
+}
+
+.cartoon-map-region-idle:hover {
+  background: rgba(255, 255, 255, 0.48);
+  color: #0f172a;
+}
+
+.cartoon-map-region-active {
+  background: rgba(255, 255, 255, 0.72);
+  color: #047857;
+  box-shadow:
+    inset 0 0 0 1px rgba(5, 150, 105, 0.16),
+    0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.cartoon-ocean {
+  fill: #c9f2fb;
+}
+
+.cartoon-grid-line {
+  stroke: rgba(14, 116, 144, 0.18);
+  stroke-dasharray: 3 5;
+}
+
+.cartoon-hatch-line {
+  stroke: rgba(5, 95, 52, 0.74);
+}
+
+.cartoon-land {
+  fill: #d8f3b2;
+  stroke: #74a85a;
+}
+
+.cartoon-land-visited {
+  fill: #5bbf64;
+  stroke: #047857;
+}
+
+.cartoon-region {
+  fill: #34a853;
+  stroke: #065f46;
+}
+
+.cartoon-selected-outline {
+  fill: rgba(187, 247, 208, 0.34);
+  stroke: #064e3b;
+}
+
+.cartoon-pin-conference {
+  color: #0284c7;
+  fill: #38bdf8;
+  filter: drop-shadow(0 1px 0 #ffffff) drop-shadow(0 2px 2px rgba(8, 47, 73, 0.24));
+}
+
+.cartoon-pin-program {
+  color: #be123c;
+  fill: #fb7185;
+  filter: drop-shadow(0 1px 0 #ffffff) drop-shadow(0 2px 2px rgba(136, 19, 55, 0.24));
+}
+
+.cartoon-pin-travel {
+  color: #b45309;
+  fill: #facc15;
+  filter: drop-shadow(0 1px 0 #ffffff) drop-shadow(0 2px 2px rgba(120, 53, 15, 0.24));
+}
+
+.cartoon-visited-swatch {
+  width: 1rem;
+  height: 0.7rem;
+  border-radius: 0.25rem;
+  border: 1px solid #047857;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 3px,
+      rgba(5, 95, 52, 0.74) 3px 5px,
+      transparent 5px 8px
+    ),
+    #5bbf64;
+}
+
+[data-theme="dark"] .cartoon-map-shell {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.1)),
+    linear-gradient(180deg, rgba(223, 247, 255, 0.72) 0%, rgba(183, 232, 246, 0.62) 100%);
+}
+
 /* Custom theme colors for light mode */
 [data-theme="light"] {
   /* --color-base-100: oklch(95.127% 0.007 260.731);

@@ -1,4 +1,4 @@
-import { User, BookOpen, Menu, X, Award, GraduationCap } from "lucide-react";
+import { User, BookOpen, Menu, X, Award, GraduationCap, NotebookPen, FlaskConical, Plane } from "lucide-react";
 import { useState, useEffect } from "react";
 import { profileData } from "../data/profileData";
 
@@ -26,23 +26,31 @@ export default function Sidebar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "education", "publications", "awards"];
+      const sections = ["about", "education", "research", "publications", "teaching", "awards", "map"];
+      const isAtPageBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 4;
 
-      // Find the section closest to the top of the viewport
+      if (isAtPageBottom) {
+        setActiveSection(sections[sections.length - 1]);
+        return;
+      }
+
+      // Find the section occupying the largest visible area in the viewport.
       let currentSection = sections[0];
-      let minDistance = Infinity;
+      let maxVisibleHeight = 0;
 
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Check if section top is above the middle of the viewport
-          if (rect.top <= 250 && rect.bottom > 0) {
-            const distance = Math.abs(rect.top);
-            if (distance < minDistance) {
-              minDistance = distance;
-              currentSection = section;
-            }
+          const visibleTop = Math.max(rect.top, 0);
+          const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+
+          if (visibleHeight > maxVisibleHeight) {
+            maxVisibleHeight = visibleHeight;
+            currentSection = section;
           }
         }
       }
@@ -72,8 +80,11 @@ export default function Sidebar() {
   const menuItems = [
     { id: "about", icon: User, label: "About" },
     { id: "education", icon: GraduationCap, label: "Education" },
+    { id: "research", icon: FlaskConical, label: "Research" },
     { id: "publications", icon: BookOpen, label: "Publications" },
+    { id: "teaching", icon: NotebookPen, label: "Teaching" },
     { id: "awards", icon: Award, label: "Awards" },
+    { id: "map", icon: Plane, label: "My Travel Map" },
   ];
 
   return (

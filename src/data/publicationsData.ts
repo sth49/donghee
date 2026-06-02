@@ -1,4 +1,6 @@
 export type Publication = {
+  id?: string;
+  teaser?: string;
   title: string;
   authors: string[];
   venue: string;
@@ -18,6 +20,8 @@ export type Publication = {
 export const publicationsData: Publication[] = [
   // To Appear
   {
+    id: "symetra-eurovis",
+    teaser: "/teasers/symetra.png",
     title:
       "Symetra: Visual Analytics for the Parameter Tuning Process of Symbolic Execution Engines",
     authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],
@@ -33,6 +37,8 @@ export const publicationsData: Publication[] = [
 
   // Published
   {
+    id: "hypocketuner",
+    teaser: "/teasers/hypocketuner.png",
     title:
       "HyPockeTuner: Bringing Hyperparameter Optimization to Mobile Devices",
     authors: ["Donghee Hong", "Bongshin Lee", "Jinwook Seo", "Jaemin Jo"],
@@ -46,6 +52,8 @@ export const publicationsData: Publication[] = [
     },
   },
   {
+    id: "symetra-vis-poster",
+    teaser: "/teasers/symetra-poster.png",
     title: "Symetra: Visual Analytics for Tuning Symbolic Execution Engines",
     authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],
     venue: "IEEE VIS (Poster)",
@@ -54,6 +62,8 @@ export const publicationsData: Publication[] = [
     isFirstAuthor: true,
   },
   {
+    id: "spokeguard",
+    teaser: "/teasers/spokeguard.png",
     title:
       "A System for Generating Image Prompts Using Large Language Models for Wheelchair Spoke Guard Design",
     authors: ["Sungwan Park", "Jihyeol Park", "Donghee Hong"],
@@ -62,6 +72,8 @@ export const publicationsData: Publication[] = [
     type: "conference",
   },
   {
+    id: "deepfake-facemasks",
+    teaser: "/teasers/deepfake-facemasks.png",
     title: "Deepfake Detection for Facial Images With Facemasks",
     authors: [
       "Donggeun Ko",
@@ -77,6 +89,8 @@ export const publicationsData: Publication[] = [
     type: "workshop",
   },
   {
+    id: "vfp290k",
+    teaser: "/teasers/vfp290k.png",
     title:
       "VFP290k: A Large-Scale Benchmark Dataset for Vision-Based Fallen Person Detection",
     authors: [

@@ -1,8 +1,11 @@
 import Sidebar from "./components/Sidebar";
 import About from "./components/About";
 import Education from "./components/Education";
+import Research from "./components/Research";
 import Publications from "./components/Publications";
+import Teaching from "./components/Teaching";
 import Awards from "./components/Awards";
+import WorldMap from "./components/WorldMap";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 
@@ -44,12 +47,24 @@ function App() {
             <Education />
           </section>
           <div className="divider px-12 my-0"></div>
+          <section id="research" className="scroll-mt-8">
+            <Research />
+          </section>
+          <div className="divider px-12 my-0"></div>
           <section id="publications" className="scroll-mt-8">
             <Publications />
           </section>
           <div className="divider px-12 my-0"></div>
+          <section id="teaching" className="scroll-mt-8">
+            <Teaching />
+          </section>
+          <div className="divider px-12 my-0"></div>
           <section id="awards" className="scroll-mt-8">
             <Awards />
+          </section>
+          <div className="divider px-12 my-0"></div>
+          <section id="map" className="scroll-mt-8">
+            <WorldMap />
           </section>
         </main>
         <Footer />

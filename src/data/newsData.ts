@@ -16,6 +16,11 @@ export type NewsItem = {
 
 export const newsData: NewsItem[] = [
   {
+    date: "2025.06",
+    content: "Presented **Symetra** at **EuroVis 2025** in Nottingham, UK",
+    type: "presentation",
+  },
+  {
     date: "2026.04",
     content:
       "Presented **HyPockeTuner** at **CHI 2026** in Barcelona, Spain",
@@ -76,6 +81,11 @@ export const newsData: NewsItem[] = [
   },
   {
     date: "2024.03",
+    content: "Selected as **Daesang Foundation** Graduate Scholar",
+    type: "scholarship",
+  },
+  {
+    date: "2024.03",
     content: "Started **M.S. in Artificial Intelligence** at SKKU",
     type: "position",
   },
@@ -83,5 +93,11 @@ export const newsData: NewsItem[] = [
     date: "2024.02",
     content: "Graduated with B.S. in Computer Science, **Summa Cum Laude**",
     type: "graduation",
+  },
+  {
+    date: "2022.03",
+    content:
+      "Awarded the **Presidential Science Scholarship** by the Korea Student Aid Foundation",
+    type: "scholarship",
   },
 ];

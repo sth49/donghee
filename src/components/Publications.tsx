@@ -8,10 +8,31 @@ import {
   Star,
 } from "lucide-react";
 import { publicationsData } from "../data/publicationsData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Publications() {
   const [showAll, setShowAll] = useState(false);
+  const [highlightedId, setHighlightedId] = useState<string | null>(null);
+
+  // Allow other sections (e.g. Research) to deep-link to a specific paper
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const pubId = (e as CustomEvent<string>).detail;
+      if (!pubId) return;
+      // Expand the full list so older papers are mounted before scrolling
+      setShowAll(true);
+      setHighlightedId(pubId);
+      // Wait a tick for the list to render, then scroll into view
+      window.setTimeout(() => {
+        const el = document.getElementById(pubId);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 50);
+      // Clear the highlight after the pulse
+      window.setTimeout(() => setHighlightedId(null), 2200);
+    };
+    window.addEventListener("navigate-publication", handler);
+    return () => window.removeEventListener("navigate-publication", handler);
+  }, []);
 
   // Group publications by year
   const publicationsByYear = publicationsData.reduce((acc, pub) => {
@@ -53,7 +74,31 @@ export default function Publications() {
               </h3>
               <ul className="space-y-6">
                 {publicationsByYear[year].map((pub, index) => (
-                  <li key={index} className="group">
+                  <li
+                    key={index}
+                    id={pub.id}
+                    className={`group scroll-mt-24 rounded-lg -mx-3 px-3 py-2 transition-colors duration-700 ${
+                      highlightedId && pub.id === highlightedId
+                        ? "bg-primary/10 ring-1 ring-primary/30"
+                        : ""
+                    }`}
+                  >
+                    <div className="flex gap-4 items-start">
+                    {pub.teaser && (
+                      <div className="hidden sm:block shrink-0 w-40 h-36 rounded-lg overflow-hidden border border-base-content/10 bg-base-200">
+                        <img
+                          src={pub.teaser}
+                          alt={`${pub.title} teaser`}
+                          loading="lazy"
+                          className="teaser-img w-full h-full object-cover"
+                          onError={(e) => {
+                            const wrapper = e.currentTarget.parentElement;
+                            if (wrapper) wrapper.style.display = "none";
+                          }}
+                        />
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0">
                     {/* Title */}
                     <p className="font-semibold text-base-content mb-1">
                       {pub.links?.pdf || pub.links?.project ? (
@@ -166,6 +211,8 @@ export default function Publications() {
                         )}
                       </div>
                     )}
+                    </div>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -185,7 +232,7 @@ export default function Publications() {
               </>
             ) : (
               <>
-                Show all publications <ChevronDown className="h-4 w-4" />
+                Show more <ChevronDown className="h-4 w-4" />
               </>
             )}
           </button>
