@@ -17,7 +17,7 @@ export type NewsItem = {
 export const newsData: NewsItem[] = [
   {
     date: "2025.06",
-    content: "Presented **Symetra** at **EuroVis 2025** in Nottingham, UK",
+    content: "Presented **Symetra** at **EuroVis 2026** in Nottingham, UK",
     type: "presentation",
   },
   {
