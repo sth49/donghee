@@ -57,7 +57,7 @@ export default function About() {
           <div className="flex-1 text-center lg:text-left">
             <div className="flex items-center gap-3 mb-6 justify-center lg:justify-start">
               <h1 className="text-4xl lg:text-5xl font-bold text-base-content">
-                Hi, I'm {profileData.name}
+                Hi, I'm {profileData.firstName}
               </h1>
               <Hand className="h-8 w-8 text-primary animate-wave" />
             </div>

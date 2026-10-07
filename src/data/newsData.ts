@@ -16,7 +16,18 @@ export type NewsItem = {
 
 export const newsData: NewsItem[] = [
   {
-    date: "2025.06",
+    date: "2026.08",
+    content:
+      "Started my **Ph.D. in Computer Science** at the University of Maryland (UMD)",
+    type: "position",
+  },
+  {
+    date: "2026.07",
+    content: "One short paper accepted to **IEEE VIS 2026**. See you in Boston!",
+    type: "paper",
+  },
+  {
+    date: "2026.06",
     content: "Presented **Symetra** at **EuroVis 2026** in Nottingham, UK",
     type: "presentation",
   },
