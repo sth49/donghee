@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { NotebookPen } from "lucide-react";
 import { profileData } from "../data/profileData";
+import ShowMoreButton from "./ShowMoreButton";
+
+const INITIAL_COUNT = 3;
 
 export default function Teaching() {
   const { assistant } = profileData.teaching;
+  const [showAll, setShowAll] = useState(false);
+  const visible = showAll ? assistant : assistant.slice(0, INITIAL_COUNT);
 
   return (
     <section className="py-8 lg:py-12 bg-base-100">
@@ -19,7 +25,7 @@ export default function Teaching() {
         {assistant.length > 0 && (
           <div>
             <ul className="space-y-4">
-              {assistant.map((item, index) => (
+              {visible.map((item, index) => (
                 <li key={index}>
                   <p className="font-semibold text-base-content">
                     {item.course}
@@ -33,6 +39,9 @@ export default function Teaching() {
                 </li>
               ))}
             </ul>
+            {assistant.length > INITIAL_COUNT && (
+              <ShowMoreButton expanded={showAll} onClick={() => setShowAll(!showAll)} className="mt-5" />
+            )}
           </div>
         )}
       </div>
