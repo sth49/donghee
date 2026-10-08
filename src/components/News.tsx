@@ -1,6 +1,4 @@
 import {
-  ChevronDown,
-  ChevronUp,
   Award,
   Presentation,
   GraduationCap,
@@ -10,6 +8,7 @@ import {
 } from "lucide-react";
 import { newsData, type NewsType } from "../data/newsData";
 import { useState } from "react";
+import ShowMoreButton from "./ShowMoreButton";
 
 export default function News() {
   const [showAll, setShowAll] = useState(false);
@@ -88,20 +87,7 @@ export default function News() {
 
         {/* Toggle Button */}
         {newsData.length > 3 && (
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="mt-4 text-sm text-base-content/50 hover:text-primary transition-colors flex items-center gap-1"
-          >
-            {showAll ? (
-              <>
-                Show less <ChevronUp className="h-4 w-4" />
-              </>
-            ) : (
-              <>
-                Show more <ChevronDown className="h-4 w-4" />
-              </>
-            )}
-          </button>
+          <ShowMoreButton expanded={showAll} onClick={() => setShowAll(!showAll)} className="mt-4" />
         )}
       </div>
     </section>

@@ -1,7 +1,8 @@
-import { Mail, FileText, BookOpen, Hand, Award, Medal, Briefcase, GraduationCap, Sparkles, ChevronDown, ChevronUp, Presentation } from "lucide-react";
+import { Mail, FileText, BookOpen, Hand, Award, Medal, Briefcase, GraduationCap, Sparkles, Presentation } from "lucide-react";
 import { profileData } from "../data/profileData";
 import { newsData, type NewsType } from "../data/newsData";
 import { useState } from "react";
+import ShowMoreButton from "./ShowMoreButton";
 
 export default function About() {
   const [showAllNews, setShowAllNews] = useState(false);
@@ -241,20 +242,7 @@ export default function About() {
               })}
             </ul>
             {newsData.length > 3 && (
-              <button
-                onClick={() => setShowAllNews(!showAllNews)}
-                className="mt-4 btn btn-sm btn-primary gap-1"
-              >
-                {showAllNews ? (
-                  <>
-                    Show less <ChevronUp className="h-4 w-4" />
-                  </>
-                ) : (
-                  <>
-                    Show more <ChevronDown className="h-4 w-4" />
-                  </>
-                )}
-              </button>
+              <ShowMoreButton expanded={showAllNews} onClick={() => setShowAllNews(!showAllNews)} className="mt-4" />
             )}
           </div>
 

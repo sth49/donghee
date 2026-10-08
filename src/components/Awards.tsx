@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Medal, Award, Trophy } from "lucide-react";
+import { Medal, Award, Trophy } from "lucide-react";
 import { profileData } from "../data/profileData";
+import ShowMoreButton from "./ShowMoreButton";
 
 export default function Awards() {
   const [showAllScholarships, setShowAllScholarships] = useState(false);
@@ -48,20 +49,7 @@ export default function Awards() {
               ))}
             </ul>
             {allScholarships.length > 3 && (
-              <button
-                onClick={() => setShowAllScholarships(!showAllScholarships)}
-                className="mt-5 btn btn-sm btn-primary gap-1"
-              >
-                {showAllScholarships ? (
-                  <>
-                    Show less <ChevronUp className="h-4 w-4" />
-                  </>
-                ) : (
-                  <>
-                    Show more <ChevronDown className="h-4 w-4" />
-                  </>
-                )}
-              </button>
+              <ShowMoreButton expanded={showAllScholarships} onClick={() => setShowAllScholarships(!showAllScholarships)} className="mt-5" />
             )}
           </div>
         )}
@@ -90,20 +78,7 @@ export default function Awards() {
               ))}
             </ul>
             {allAwards.length > 3 && (
-              <button
-                onClick={() => setShowAllAwards(!showAllAwards)}
-                className="mt-5 btn btn-sm btn-primary gap-1"
-              >
-                {showAllAwards ? (
-                  <>
-                    Show less <ChevronUp className="h-4 w-4" />
-                  </>
-                ) : (
-                  <>
-                    Show more <ChevronDown className="h-4 w-4" />
-                  </>
-                )}
-              </button>
+              <ShowMoreButton expanded={showAllAwards} onClick={() => setShowAllAwards(!showAllAwards)} className="mt-5" />
             )}
           </div>
         )}

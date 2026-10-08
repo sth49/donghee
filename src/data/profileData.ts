@@ -203,6 +203,7 @@ export const profileData = {
   ],
   teaching: {
     assistant: [
+      { course: "CMSC471: Introduction to Data Visualization", terms: "Fall 2026", school: "UMD" },
       { course: "Introduction to Human-Computer Interaction", terms: "Fall 2024, Fall 2025", school: "SKKU" },
       { course: "Information Visualization", terms: "Spring 2025", school: "SKKU" },
       { course: "Problem Solving", terms: "Fall 2025", school: "SKKU" },

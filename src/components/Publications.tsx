@@ -3,12 +3,11 @@ import {
   Link2,
   BookOpen,
   ExternalLink,
-  ChevronDown,
-  ChevronUp,
   Star,
 } from "lucide-react";
 import { publicationsData } from "../data/publicationsData";
 import { useEffect, useState } from "react";
+import ShowMoreButton from "./ShowMoreButton";
 
 export default function Publications() {
   const [showAll, setShowAll] = useState(false);
@@ -222,20 +221,7 @@ export default function Publications() {
 
         {/* Show All Button */}
         {olderYears.length > 0 && (
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="mt-6 btn btn-sm btn-primary gap-1"
-          >
-            {showAll ? (
-              <>
-                Show less <ChevronUp className="h-4 w-4" />
-              </>
-            ) : (
-              <>
-                Show more <ChevronDown className="h-4 w-4" />
-              </>
-            )}
-          </button>
+          <ShowMoreButton expanded={showAll} onClick={() => setShowAll(!showAll)} className="mt-6" />
         )}
       </div>
     </section>

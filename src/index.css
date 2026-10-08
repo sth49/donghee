@@ -207,18 +207,19 @@ html {
 
 /* Custom theme colors for light mode */
 [data-theme="light"] {
-  /* --color-base-100: oklch(95.127% 0.007 260.731);
-  --color-base-200: oklch(93.299% 0.01 261.788);
-  --color-base-300: oklch(89.925% 0.016 262.749); */
-  --color-base-content: oklch(32.437% 0.022 264.182);
-  --color-primary: oklch(59.435% 0.077 254.027);
-  --color-primary-content: oklch(95.127% 0.007 260.731);
-  --color-secondary: oklch(69.651% 0.059 248.687);
-  --color-secondary-content: oklch(95.127% 0.007 260.731);
-  --color-accent: oklch(77.464% 0.062 217.469);
-  --color-accent-content: oklch(95.127% 0.007 260.731);
-  --color-neutral: oklch(45.229% 0.035 264.131);
-  --color-neutral-content: oklch(89.925% 0.016 262.749);
+  /* Soft blush surfaces to pair with the dusty rose accent */
+  --color-base-100: oklch(99.3% 0.003 30);
+  --color-base-200: oklch(97.2% 0.008 30);
+  --color-base-300: oklch(93.9% 0.014 30);
+  --color-base-content: oklch(31% 0.014 20);
+  --color-primary: oklch(60% 0.09 18);
+  --color-primary-content: oklch(99% 0.004 18);
+  --color-secondary: oklch(72% 0.07 35);
+  --color-secondary-content: oklch(99% 0.004 35);
+  --color-accent: oklch(78% 0.05 10);
+  --color-accent-content: oklch(99% 0.005 15);
+  --color-neutral: oklch(42% 0.016 20);
+  --color-neutral-content: oklch(95% 0.008 30);
   --color-info: oklch(69.207% 0.062 332.664);
   --color-info-content: oklch(95.127% 0.007 260.731);
   --color-success: oklch(76.827% 0.074 131.063);
@@ -227,34 +228,21 @@ html {
   --color-warning-content: oklch(95.127% 0.007 260.731);
   --color-error: oklch(60.61% 0.12 15.341);
   --color-error-content: oklch(95.127% 0.007 260.731);
-
-  /* --color-primary: oklch(59.69% 0.2 255.75) !important;
-  --color-primary-content: oklch(100% 0 0) !important;
-  --color-secondary: oklch(64.77% 0.221 296.8) !important;
-  --color-secondary-content: oklch(100% 0 0) !important;
-  --color-accent: oklch(70.26% 0.162 162.48) !important;
-  --color-accent-content: oklch(100% 0 0) !important;
-  --color-neutral: oklch(25% 0.015 255.75) !important;
-  --color-neutral-content: oklch(100% 0 0) !important;
-  --color-base-100: oklch(100% 0 0) !important;
-  --color-base-200: oklch(96.27% 0 0) !important;
-  --color-base-300: oklch(92.41% 0.004 285.88) !important;
-  --color-base-content: oklch(25% 0.015 255.75) !important; */
 }
 [data-theme="dark"] {
   color-scheme: dark;
-  --color-base-100: oklch(24.353% 0 0) !important;
-  --color-base-200: oklch(22.648% 0 0) !important;
-  --color-base-300: oklch(20.944% 0 0) !important;
-  --color-base-content: oklch(84.87% 0 0) !important;
-  --color-primary: oklch(65% 0.12 251.473) !important;
-  --color-primary-content: oklch(20% 0.02 251.473) !important;
-  --color-secondary: oklch(64.092% 0.027 229.389) !important;
-  --color-secondary-content: oklch(12.818% 0.005 229.389) !important;
+  --color-base-100: oklch(24.5% 0.007 20) !important;
+  --color-base-200: oklch(22.5% 0.009 20) !important;
+  --color-base-300: oklch(20.5% 0.011 20) !important;
+  --color-base-content: oklch(88% 0.008 30) !important;
+  --color-primary: oklch(74% 0.08 18) !important;
+  --color-primary-content: oklch(20% 0.02 18) !important;
+  --color-secondary: oklch(78% 0.06 35) !important;
+  --color-secondary-content: oklch(20% 0.02 35) !important;
   --color-accent: oklch(67.271% 0.167 35.791) !important;
   --color-accent-content: oklch(13.454% 0.033 35.791) !important;
-  --color-neutral: oklch(27.441% 0.013 253.041) !important;
-  --color-neutral-content: oklch(85.488% 0.002 253.041) !important;
+  --color-neutral: oklch(28% 0.01 20) !important;
+  --color-neutral-content: oklch(86% 0.006 30) !important;
   --color-info: oklch(62.616% 0.143 240.033) !important;
   --color-info-content: oklch(12.523% 0.028 240.033) !important;
   --color-success: oklch(70.226% 0.094 156.596) !important;
