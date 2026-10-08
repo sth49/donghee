@@ -20,12 +20,24 @@ export type Publication = {
 export const publicationsData: Publication[] = [
   // To Appear
   {
+    id: "tunescape",
+    teaser: "/teasers/tunescape.png",
+    title: "TuneScape: Visualizing Multi-Tuner Parameter Optimization Logs",
+    authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],
+    venue: "IEEE VIS Short Papers (To Appear)",
+    year: 2026,
+    type: "conference",
+    isFirstAuthor: true,
+  },
+
+  // Published
+  {
     id: "symetra-eurovis",
     teaser: "/teasers/symetra.png",
     title:
       "Symetra: Visual Analytics for the Parameter Tuning Process of Symbolic Execution Engines",
     authors: ["Donghee Hong", "Minjong Kim", "Sooyoung Cha", "Jaemin Jo"],
-    venue: "EuroVis (To Appear)",
+    venue: "Eurographics Conference on Visualization (EuroVis)",
     year: 2026,
     type: "conference",
     isFirstAuthor: true,
@@ -34,8 +46,6 @@ export const publicationsData: Publication[] = [
       github: "https://github.com/sth49/Symetra",
     },
   },
-
-  // Published
   {
     id: "hypocketuner",
     teaser: "/teasers/hypocketuner.png",

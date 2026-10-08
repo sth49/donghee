@@ -11,7 +11,7 @@ export default function ShowMoreButton({ expanded, onClick, className = "" }: Pr
     <button
       onClick={onClick}
       aria-expanded={expanded}
-      className={`group inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/[0.06] px-4 py-1.5 text-sm font-medium text-primary transition-all hover:border-primary/45 hover:bg-primary/[0.12] active:scale-[0.97] ${className}`}
+      className={`group inline-flex items-center gap-1.5 rounded-full border border-[color-mix(in_oklab,var(--color-primary)_30%,transparent)] bg-[color-mix(in_oklab,var(--color-primary)_6%,transparent)] px-4 py-1.5 text-sm font-medium text-primary transition-all hover:border-primary hover:bg-primary hover:text-primary-content active:scale-[0.97] ${className}`}
     >
       {expanded ? "Show less" : "Show more"}
       <ChevronDown

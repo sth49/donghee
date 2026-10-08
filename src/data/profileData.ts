@@ -182,7 +182,7 @@ export const profileData = {
       adviser: "Prof. Jaemin Jo",
       duration: "Aug 2022 - Jun 2026",
       projects: [
-        { name: "TuneScape", venue: "VIS 2026" },
+        { name: "TuneScape", venue: "VIS 2026", pubId: "tunescape" },
         { name: "HyPockeTuner", venue: "CHI 2026", pubId: "hypocketuner" },
         { name: "Symetra", venue: "EuroVis 2026", pubId: "symetra-eurovis" },
         { name: "SAE Feature Visualization" },

@@ -67,7 +67,7 @@ export default function About() {
             <div className="flex flex-wrap gap-5">
               <a
                 href={`mailto:${profileData.email}`}
-                className="btn btn-ghost hover:bg-primary/10 hover:text-primary p-1"
+                className="btn btn-ghost hover:bg-primary hover:text-primary-content hover:border-primary px-2 py-1"
                 title="Email"
               >
                 <Mail className="h-5 w-5" />
@@ -77,7 +77,7 @@ export default function About() {
                 href={profileData.cv}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-ghost gap-2 hover:bg-primary/10 hover:text-primary p-1"
+                className="btn btn-ghost gap-2 hover:bg-primary hover:text-primary-content hover:border-primary px-2 py-1"
                 title="Download CV"
               >
                 <FileText className="h-5 w-5" />
@@ -87,7 +87,7 @@ export default function About() {
                 href={profileData.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-ghost gap-2 hover:bg-primary/10 hover:text-primary p-1"
+                className="btn btn-ghost gap-2 hover:bg-primary hover:text-primary-content hover:border-primary px-2 py-1"
                 title="GitHub"
               >
                 <svg
@@ -103,7 +103,7 @@ export default function About() {
                 href={profileData.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-ghost gap-2 hover:bg-primary/10 hover:text-primary p-1"
+                className="btn btn-ghost gap-2 hover:bg-primary hover:text-primary-content hover:border-primary px-2 py-1"
                 title="LinkedIn"
               >
                 <svg
@@ -119,7 +119,7 @@ export default function About() {
                 href={profileData.googleScholar}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-ghost gap-2 hover:bg-primary/10 hover:text-primary p-1"
+                className="btn btn-ghost gap-2 hover:bg-primary hover:text-primary-content hover:border-primary px-2 py-1"
                 title="Google Scholar"
               >
                 <BookOpen className="h-5 w-5" />
