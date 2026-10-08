@@ -8,7 +8,7 @@ export const profileData = {
   email: "donghee@umd.edu",
   github: "https://github.com/sth49",
   linkedin: "https://linkedin.com/in/donghee-hong-0ab5a823a",
-  googleScholar: "https://scholar.google.com/citations?user=YOURID",
+  googleScholar: "https://scholar.google.com/citations?user=VGOrwzsAAAAJ",
   cv: "/cv.pdf",
   profileImage: "/profile.jpg",
   bio: [
