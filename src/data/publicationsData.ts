@@ -28,6 +28,9 @@ export const publicationsData: Publication[] = [
     year: 2026,
     type: "conference",
     isFirstAuthor: true,
+    links: {
+      pdf: "/TuneScape.pdf",
+    },
   },
 
   // Published
